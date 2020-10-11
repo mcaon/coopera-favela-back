@@ -18,7 +18,9 @@ class Order {
 
   @ManyToOne(() => Deliveryman, { eager: true })
   @JoinColumn({ name: 'deliveryman_id' })
-  customer: Deliveryman;
+  deliveryman: Deliveryman;
+
+  address: string;
 
   @OneToMany(() => OrdersProducts, order => order.order, {
     cascade: true,

@@ -1,8 +1,9 @@
-import FindDeliverymanService from '@modules/deliveryman/services/FindDeliverymanService';
-import FindDeliverymanByNameService from '@modules/deliveryman/services/FindDeliverymanByNameService';
 import { Request, Response } from 'express';
 
 import { container } from 'tsyringe';
+
+import FindDeliverymanByNameService from '../../../services/FindDeliverymanByNameService';
+import FindDeliverymanService from '../../../services/FindDeliverymanService';
 import CreateDeliverymanService from '../../../services/CreateDeliverymanService';
 import FindAllDeliverymanService from '../../../services/FindAllDeliverymanService';
 

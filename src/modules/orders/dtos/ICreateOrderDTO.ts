@@ -2,8 +2,9 @@ import Deliveryman from '../../deliveryman/infra/typeorm/entities/Deliveryman';
 
 interface IProduct {
   product_id: string;
-  price: number;
-  quantity: number;
+  value: number;
+  description: string;
+  image: string;
 }
 
 export default interface ICreateOrderDTO {

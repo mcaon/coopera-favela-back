@@ -9,7 +9,9 @@ import IOrdersRepository from '../repositories/IOrdersRepository';
 
 interface IProduct {
   id: string;
-  quantity: number;
+  value: number;
+  description: string;
+  image: string;
 }
 
 interface IRequest {
@@ -50,8 +52,9 @@ class CreateOrderService {
 
       return {
         product_id: productData.id,
-        value: productData.value,
-        quantity: productFinal?.quantity || 0,
+        value: productData.value || 0,
+        description: productFinal?.description || '',
+        image: productFinal?.image || '',
       };
     });
 
