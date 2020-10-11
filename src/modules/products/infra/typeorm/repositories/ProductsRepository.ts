@@ -16,6 +16,16 @@ class ProductsRepository implements IProductsRepository {
     this.ormRepository = getRepository(Product);
   }
 
+  public async findAll(): Promise<Product[]> {
+    const orderList = await this.ormRepository.find();
+
+    if (orderList.length < 1) {
+      throw new AppError('Missing Products');
+    }
+
+    return orderList;
+  }
+
   public async findById(id: string): Promise<Product | undefined> {
     const findProduct = await this.ormRepository.findOne({
       where: {

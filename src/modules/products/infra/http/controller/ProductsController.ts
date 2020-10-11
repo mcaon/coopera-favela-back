@@ -3,6 +3,7 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import CreateProductService from '../../../services/CreateProductService';
 import FindProductService from '../../../services/FindProductService';
+import FindAllProductService from '../../../services/FindAllProductService';
 import FindProductByNameService from '../../../services/FindProductByNameService';
 import FindProductByValueService from '../../../services/FindProductByValueService';
 
@@ -18,6 +19,14 @@ export default class ProductsController {
       description,
       image,
     });
+
+    return response.json(product);
+  }
+
+  public async list(request: Request, response: Response): Promise<Response> {
+    const findProduct = container.resolve(FindAllProductService);
+
+    const product = await findProduct.execute();
 
     return response.json(product);
   }

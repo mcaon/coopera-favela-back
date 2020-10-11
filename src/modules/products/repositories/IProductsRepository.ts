@@ -12,4 +12,5 @@ export default interface IProductsRepository {
   findById(id: string): Promise<Product | undefined>;
   findByName(name: string): Promise<Product | undefined>;
   findAllById(products: IFindProducts[]): Promise<Product[]>;
+  findAll(): Promise<Product[]>;
 }
