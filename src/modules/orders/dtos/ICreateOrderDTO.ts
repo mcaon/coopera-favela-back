@@ -1,4 +1,4 @@
-import Customer from '@modules/customers/infra/typeorm/entities/Customer';
+import Customer from '../../customers/infra/typeorm/entities/Customer';
 
 interface IProduct {
   product_id: string;

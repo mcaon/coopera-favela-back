@@ -1,7 +1,7 @@
 import { getRepository, Repository } from 'typeorm';
 
-import IOrdersRepository from '@modules/orders/repositories/IOrdersRepository';
-import ICreateOrderDTO from '@modules/orders/dtos/ICreateOrderDTO';
+import IOrdersRepository from '../../../../orders/repositories/IOrdersRepository';
+import ICreateOrderDTO from '../../../../orders/dtos/ICreateOrderDTO';
 import Order from '../entities/Order';
 
 class OrdersRepository implements IOrdersRepository {

@@ -8,8 +8,8 @@ import {
   OneToMany,
 } from 'typeorm';
 
-import Customer from '@modules/customers/infra/typeorm/entities/Customer';
-import OrdersProducts from '@modules/orders/infra/typeorm/entities/OrdersProducts';
+import Customer from '../../../../customers/infra/typeorm/entities/Customer';
+import OrdersProducts from '../../../../orders/infra/typeorm/entities/OrdersProducts';
 
 @Entity('orders')
 class Order {

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import CreateCustomerService from '@modules/customers/services/CreateCustomerService';
+import CreateCustomerService from '../../../../customers/services/CreateCustomerService';
 
 import { container } from 'tsyringe';
 
