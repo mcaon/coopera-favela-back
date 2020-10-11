@@ -1,7 +1,7 @@
 import { getRepository, Repository } from 'typeorm';
 
-import ICustomersRepository from '../../../../customers/repositories/ICustomersRepository';
-import ICreateCustomerDTO from '../../../../customers/dtos/ICreateCustomerDTO';
+import ICustomersRepository from '../../../repositories/ICustomersRepository';
+import ICreateCustomerDTO from '../../../dtos/ICreateCustomerDTO';
 import Customer from '../entities/Customer';
 
 class CustomersRepository implements ICustomersRepository {

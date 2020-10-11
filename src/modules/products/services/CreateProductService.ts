@@ -7,8 +7,9 @@ import IProductsRepository from '../repositories/IProductsRepository';
 
 interface IRequest {
   name: string;
-  price: number;
-  quantity: number;
+  value: number;
+  description: string;
+  image: string;
 }
 
 @injectable()
@@ -18,7 +19,12 @@ class CreateProductService {
     private productsRepository: IProductsRepository,
   ) {}
 
-  public async execute({ name, price, quantity }: IRequest): Promise<Product> {
+  public async execute({
+    name,
+    value,
+    description,
+    image,
+  }: IRequest): Promise<Product> {
     const checkProduct = await this.productsRepository.findByName(name);
 
     if (checkProduct) {
@@ -27,8 +33,9 @@ class CreateProductService {
 
     const product = await this.productsRepository.create({
       name,
-      price,
-      quantity,
+      value,
+      description,
+      image,
     });
 
     return product;

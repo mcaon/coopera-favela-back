@@ -5,7 +5,7 @@ import 'express-async-errors';
 import cors from 'cors';
 
 import AppError from '../../errors/AppError';
-import createConnection from '../typeorm/';
+import createConnection from '../typeorm';
 import routes from './routes';
 
 import '../../container';
@@ -33,5 +33,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
     message: 'Internal server error',
   });
 });
+
+app.get('/', (request, response) => response.json({ message: 'Health Check' }));
 
 export default app;
