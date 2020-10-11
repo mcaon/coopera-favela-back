@@ -1,0 +1,9 @@
+{
+  "type": "postgres",
+  "url": "postgres://iispfdqtsalida:0852ca08d5a408ceddc088ca27ccc51153cf5ef290a5dc09317707805fbe083c@ec2-3-228-114-251.compute-1.amazonaws.com:5432/db7dadoh48c6u7",
+  "entities": ["./src/modules/**/infra/typeorm/entities/*.ts"],
+  "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
+  "cli": {
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
+  }
+}

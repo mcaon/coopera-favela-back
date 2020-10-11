@@ -1,0 +1,205 @@
+-------Products-------
+{
+  Products:
+
+  GET /products
+  Return:
+  { "message": "Ok" }
+
+  POST /products
+  Payload:
+  {
+    "name": string,
+    "value": number,
+    "description": string,
+    "image": string,
+    "created_at": date,
+    "updated_at": date
+  }
+  Return:
+  {
+    "id": string
+    "name": string,
+    "value": number,
+    "description": string,
+    "image": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /products/getByValue/:value
+  {
+    "id": string
+    "name": string,
+    "value": number,
+    "description": string,
+    "image": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /products/getByName/:name
+  {
+    "id": string
+    "name": string,
+    "value": number,
+    "description": string,
+    "image": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /products/getById/:id
+  {
+    "id": string
+    "name": string,
+    "value": number,
+    "description": string,
+    "image": string,
+    "created_at": date,
+    "updated_at": date
+  }
+}
+-------Deliveryman-------
+{
+  Deliveryman:
+
+  GET /deliveryman
+  Return:
+  { "message": "Ok" }
+
+  POST /deliveryman
+  Payload:
+  {
+    "name": string,
+  }
+  Return:
+  {
+    "id": string
+    "name": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /deliveryman/getByName/:name
+  {
+    "id": string
+    "name": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /deliveryman/getById/:id
+  {
+    "id": string
+    "name": string,
+    "created_at": date,
+    "updated_at": date
+  }
+}
+-------Orders-------
+{
+  Orders:
+
+  GET /orders
+  Return:
+  { "message": "Ok" }
+
+  POST /orders
+  Payload:
+  {
+    "products": [ "id": string ],
+    "address": string,
+  }
+  Return:
+  {
+    "id": string,
+    "products": [
+      {
+        "id": string,
+        "name": string,
+        "value": number,
+      },
+    ],
+    "address": string,
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /orders/getById/:id
+  {
+    "id": string,
+    "products": [
+      {
+        "id": string,
+        "name": string,
+        "value": number,
+      },
+    ],
+    "address": string,
+    "created_at": date,
+    "updated_at": date
+  }
+}
+------Delivery--------
+{
+  Delivery:
+
+  GET /delivery
+  Return:
+  { "message": "Ok" }
+
+  POST /delivery
+  Payload:
+  {
+    "order": {
+      "id": string
+    },
+    "deliveryman": {
+      "id": string
+    },
+  }
+  Return:
+  {
+    "id": string,
+    "order": {
+      "id": string,
+      "products": [
+        {
+          "id": string',
+          "name": string,
+          "value": number,
+        },
+      ],
+      "address": string,
+    },
+    "deliveryman": {
+      "id": string,
+      "name": string,
+    },
+    "created_at": date,
+    "updated_at": date
+  }
+
+  GET /delivery/getById/:id
+  {
+    "id": string,
+    "order": {
+      "id": string,
+      "products": [
+        {
+          "id": string',
+          "name": string,
+          "value": number,
+        },
+      ],
+      "address": string,
+    },
+    "deliveryman": {
+      "id": string,
+      "name": string,
+    },
+    "created_at": date,
+    "updated_at": date
+  }
+}

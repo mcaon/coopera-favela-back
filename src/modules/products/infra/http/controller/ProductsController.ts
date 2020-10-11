@@ -38,8 +38,6 @@ export default class ProductsController {
   ): Promise<Response> {
     const { name } = request.params;
 
-    console.log(name);
-
     const findProduct = container.resolve(FindProductByNameService);
 
     const product = await findProduct.execute({ name });
