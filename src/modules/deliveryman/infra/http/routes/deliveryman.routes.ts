@@ -8,8 +8,6 @@ const deliverymanController = new DeliverymanController();
 deliverymanRouter.post('/', deliverymanController.create);
 deliverymanRouter.get('/getByName/:name', deliverymanController.showByName);
 deliverymanRouter.get('/getById/:id', deliverymanController.show);
-deliverymanRouter.get('/', (req, res) => {
-  return res.json({ message: 'Ok' });
-});
+deliverymanRouter.get('/', deliverymanController.list);
 
 export default deliverymanRouter;
